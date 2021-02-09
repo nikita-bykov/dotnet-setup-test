@@ -30,7 +30,7 @@ jobs:
           # source-url: https://api.nuget.org/v3/index.json
           source-url: https://nuget.pkg.github.com/vsafonkin/index.json
         env:
-          NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NUGET_AUTH_TOKEN: ${{ secrets.PKG_PAT }}
 
       - run: dotnet --info
 
@@ -42,4 +42,4 @@ jobs:
         run: dotnet pack
 
       - name: Publish nuget package
-        run: dotnet nuget push /home/runner/work/dotnet-setup-test/dotnet-setup-test/bin/Debug/TestPackage.1.0.0.nupkg
+        run: dotnet nuget push "bin/Debug/TestPackage.1.0.0.nupkg"
