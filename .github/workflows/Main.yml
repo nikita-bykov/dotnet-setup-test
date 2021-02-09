@@ -39,3 +39,6 @@ jobs:
 
       - name: Build sample project
         run: dotnet build
+
+      - name: Test sample project
+        run: dotnet test --no-build
