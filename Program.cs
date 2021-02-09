@@ -1,12 +1,15 @@
 ﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace dotnet_setup_test
 {
-    class Program
+    [TestClass]
+    public class Program
     {
-        static void Main(string[] args)
+        [TestMethod]
+        public void TestMethod1()
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Hello, World!");
         }
     }
 }
