@@ -18,6 +18,10 @@ jobs:
       - uses: actions/checkout@v2
       
       - run: dotnet --info
+
+      - name: Set dotnet install dir (Ubuntu)
+        if: runner.os == 'Linux'
+        run: echo "DOTNET_INSTALL_DIR=/usr/share/dotnet" >> $GITHUB_ENV
       
       - name: Setup dotnet
         uses: actions/setup-dotnet@v1
