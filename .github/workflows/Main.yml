@@ -36,3 +36,6 @@ jobs:
       - name: Nuget.config
         shell: pwsh
         run: Get-Content '../nuget.config'
+
+      - name: Build sample project
+        run: dotnet build
