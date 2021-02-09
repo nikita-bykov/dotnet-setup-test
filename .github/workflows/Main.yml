@@ -41,4 +41,5 @@ jobs:
       - name: Create nuget package
         run: dotnet pack
 
-      - run: ls .
+      - name: Publish nuget package
+        run: dotnet nuget push TestPackage.1.0.0.nupkg
