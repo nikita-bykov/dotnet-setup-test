@@ -42,4 +42,6 @@ jobs:
         run: dotnet pack
 
       - name: Publish nuget package
-        run: dotnet nuget push "bin/Debug/TestPackage.1.0.0.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }} --source "github"
+        run: |
+          cd ..
+          dotnet nuget push "dotnet-setup-test/bin/Debug/TestPackage.1.0.0.nupkg"
