@@ -32,3 +32,7 @@ jobs:
           NUGET_AUTH_TOKEN: NOTATOKEN
 
       - run: dotnet --info
+
+      - name: Nuget.config
+        shell: pwsh
+        run: Get-Content '../nuget.config'
