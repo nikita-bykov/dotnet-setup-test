@@ -4,6 +4,10 @@
     <OutputType>Exe</OutputType>
     <TargetFrameworks>netcoreapp3.1;netcoreapp5.0</TargetFrameworks>
     <RootNamespace>dotnet_setup_test</RootNamespace>
+    <PackageId>TestPackage</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>vsafonkin</Authors>
+    <Company>akvelon</Company>
   </PropertyGroup>
 
   <ItemGroup>
