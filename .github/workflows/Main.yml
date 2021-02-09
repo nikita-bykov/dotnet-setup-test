@@ -43,5 +43,4 @@ jobs:
 
       - name: Publish nuget package
         run: |
-          cd ..
-          dotnet nuget push "dotnet-setup-test/bin/Debug/TestPackage.1.0.0.nupkg"
+          dotnet nuget push "bin/Debug/TestPackage.1.0.0.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }} --source "https://nuget.pkg.github.com/vsafonkin/index.json"
