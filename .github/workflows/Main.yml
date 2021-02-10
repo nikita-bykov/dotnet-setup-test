@@ -34,19 +34,19 @@ jobs:
         with:
           dotnet-version: 3.1.*
           # source-url: https://api.nuget.org/v3/index.json
-        #   source-url: https://nuget.pkg.github.com/vsafonkin/index.json
-        # env:
-        #   NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          source-url: https://nuget.pkg.github.com/vsafonkin/index.json
+        env:
+          NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - run: dotnet --info
 
-      # - name: Nuget.config
-      #   shell: pwsh
-      #   run: Get-Content '../nuget.config'
+      - name: Nuget.config
+        shell: pwsh
+        run: Get-Content '../nuget.config'
 
-      # - name: Create nuget package
-      #   run: dotnet pack
+      - name: Create nuget package
+        run: dotnet pack --configuration Release dotnet-setup-test.csproj
 
-      # - name: Publish nuget package
-      #   run: |
-      #     dotnet nuget push "bin/Debug/TestPackage.1.0.0.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }} --source "https://nuget.pkg.github.com/vsafonkin"
+      - name: Publish nuget package
+        run: |
+          dotnet nuget push bin/Release/*.nupkg
