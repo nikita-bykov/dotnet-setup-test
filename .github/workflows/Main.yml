@@ -49,4 +49,4 @@ jobs:
 
       - name: Publish nuget package
         run: |
-          dotnet nuget push bin/Release/*.nupkg
+          dotnet nuget push dotnet-setup-test/bin/Release/*.nupkg
