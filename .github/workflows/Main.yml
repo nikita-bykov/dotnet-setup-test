@@ -20,7 +20,7 @@ jobs:
           fetch-depth: 0
         #   ref: 55a6f573538af2ab64cef51f3c6a700eca728498
 
-      - run: echo "hello"
+      - run: git show-ref
       
       - run: dotnet --info
 
