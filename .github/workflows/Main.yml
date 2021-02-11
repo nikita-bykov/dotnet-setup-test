@@ -17,7 +17,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-        # with:
+        with:
+          fetch-depth: 0
         #   ref: 55a6f573538af2ab64cef51f3c6a700eca728498
       
       - run: dotnet --info
