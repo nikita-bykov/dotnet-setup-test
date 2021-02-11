@@ -17,8 +17,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-        with:
-          ref: 55a6f573538af2ab64cef51f3c6a700eca728498
+        # with:
+        #   ref: 55a6f573538af2ab64cef51f3c6a700eca728498
       
       - run: dotnet --info
 
