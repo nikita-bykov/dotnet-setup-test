@@ -44,7 +44,9 @@ jobs:
 
       - run: dotnet --version
 
-      - run: ls -la
+      - name: global json
+        shell: pwsh
+        run: Get-Content global.json
 
       # - name: Nuget.config
       #   shell: pwsh
