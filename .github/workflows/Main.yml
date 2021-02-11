@@ -19,7 +19,7 @@ jobs:
         with:
           fetch-depth: 0
         #   ref: 55a6f573538af2ab64cef51f3c6a700eca728498
-      
+            
       - run: dotnet --info
 
       # - name: Set dotnet install dir (Ubuntu)
@@ -42,13 +42,13 @@ jobs:
 
       - run: dotnet --info
 
-      - run: dotnet new globaljson --sdk-version "3.1.406"
+      # - run: dotnet new globaljson --sdk-version "3.1.406"
 
-      - run: dotnet --version
+      # - run: dotnet --version
 
-      - name: global json
-        shell: pwsh
-        run: Get-Content global.json
+      # - name: global json
+      #   shell: pwsh
+      #   run: Get-Content global.json
 
       # - name: Nuget.config
       #   shell: pwsh
