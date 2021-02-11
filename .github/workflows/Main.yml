@@ -60,3 +60,7 @@ jobs:
       # - name: Publish nuget package
       #   run: |
       #     dotnet nuget push bin/Release/*.nupkg
+
+      - name: Test
+        shell: pwsh
+        run: Get-Content test.txt
