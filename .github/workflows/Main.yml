@@ -40,9 +40,11 @@ jobs:
 
       - run: dotnet --info
 
-      - run: dotnet new globaljson --sdk-version "3.1.*"
+      - run: dotnet new globaljson --sdk-version "3.1.406"
 
       - run: dotnet --version
+
+      - run: ls -la
 
       # - name: Nuget.config
       #   shell: pwsh
