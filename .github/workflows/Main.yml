@@ -40,6 +40,13 @@ jobs:
         env:
           NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v1
+        with:
+          source-url: https://buildcanary.pkgs.visualstudio.com/CanaryBuilds/_packaging/testReadmeFeed/nuget/v3/index.json
+        env:
+          NUGET_AUTH_TOKEN: ${{ secrets.AZ_TOKEN }}
+
       - run: dotnet --info
 
       # - run: dotnet new globaljson --sdk-version "3.1.406"
@@ -50,8 +57,8 @@ jobs:
       #   shell: pwsh
       #   run: Get-Content global.json
 
-      - name: Add Azure Nuget feed
-        run: dotnet nuget add source https://buildcanary.pkgs.visualstudio.com/CanaryBuilds/_packaging/testReadmeFeed/nuget/v3/index.json -n "AzureFeed" --configfile ../nuget.config --store-password-in-clear-text -p ${{ secrets.AZ_TOKEN }} -u v-vlsafo
+      # - name: Add Azure Nuget feed
+      #   run: dotnet nuget add source https://buildcanary.pkgs.visualstudio.com/CanaryBuilds/_packaging/testReadmeFeed/nuget/v3/index.json -n "AzureFeed" --configfile ../nuget.config --store-password-in-clear-text -p ${{ secrets.AZ_TOKEN }} -u v-vlsafo
 
       - name: Nuget.config
         shell: pwsh
