@@ -59,13 +59,13 @@ jobs:
       - name: Build project
         run: dotnet build
 
-      - name: Create nuget package
-        run: dotnet pack --configuration Release dotnet-setup-test.csproj
+      # - name: Create nuget package
+      #   run: dotnet pack --configuration Release dotnet-setup-test.csproj
 
       # - name: Publish nuget package
       #   run: |
       #     dotnet nuget push bin/Release/*.nupkg
 
-      - name: Publish nuget package
-        run: |
-          dotnet nuget push ./bin/Release/*.nupkg --source "AzureFeed" -k ${{ secrets.AZ_TOKEN }}
+      # - name: Publish nuget package
+      #   run: |
+      #     dotnet nuget push ./bin/Release/*.nupkg --source "AzureFeed" -k ${{ secrets.AZ_TOKEN }}
