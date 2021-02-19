@@ -51,20 +51,18 @@ jobs:
       #   run: Get-Content global.json
 
       - name: Add Azure Nuget feed
-        run: dotnet nuget add source https://buildcanary.pkgs.visualstudio.com/CanaryBuilds/_packaging/testReadmeFeed/nuget/v3/index.json -n "AzureFeed"
+        run: dotnet nuget add source https://buildcanary.pkgs.visualstudio.com/CanaryBuilds/_packaging/testReadmeFeed/nuget/v3/index.json -n "AzureFeed" --configfile d:\a\dotnet-setup-test\nuget.config
 
       - name: Nuget.config
         shell: pwsh
         run: Get-Content '../nuget.config'
-
-      - run: ls ~/.config/NuGet
         
       - name: Build project
         run: dotnet build
 
-      # - name: Create nuget package
-      #   run: dotnet pack --configuration Release dotnet-setup-test.csproj
+      - name: Create nuget package
+        run: dotnet pack --configuration Release dotnet-setup-test.csproj
 
-      # - name: Publish nuget package
-      #   run: |
-      #     dotnet nuget push bin/Release/*.nupkg
+      - name: Publish nuget package
+        run: |
+          dotnet nuget push bin/Release/*.nupkg
