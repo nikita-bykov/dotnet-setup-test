@@ -71,9 +71,9 @@ jobs:
         env:
           NUGET_AUTH_TOKEN: ${{ secrets.AZ_TOKEN }}
       
-      - name: Publish nuget package
-        run: |
-          dotnet nuget push bin/Release/*.nupkg
+      # - name: Publish nuget package
+      #   run: |
+      #     dotnet nuget push bin/Release/*.nupkg
 
       - name: Publish nuget package
         run: |
