@@ -57,7 +57,7 @@ jobs:
         shell: pwsh
         run: Get-Content '../nuget.config'
 
-      - run: ls -la .
+      - run: cat ~/.config/NuGet/NuGet.Config
         
       - name: Build project
         run: dotnet build
