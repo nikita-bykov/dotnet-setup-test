@@ -77,4 +77,4 @@ jobs:
 
       - name: Publish nuget package
         run: |
-          dotnet nuget push ./bin/Release/*.nupkg --source "AzureFeed" -k ${{ secrets.AZ_TOKEN }}
+          dotnet nuget push ./bin/Release/*.nupkg -k ${{ secrets.AZ_TOKEN }}
