@@ -59,4 +59,4 @@ jobs:
 
       - name: Publish nuget package
         run: |
-          dotnet nuget push bin/Release/*.nupkg -s https://nuget.pkg.github.com/vsafonkin/index.json -k ${{ secrets.PKG_PAT }}
+          dotnet nuget push ./bin/Release/*.nupkg -s https://nuget.pkg.github.com/vsafonkin/index.json -k ${{ secrets.GITHUB_TOKEN }} --skip-duplicate --no-symbols
