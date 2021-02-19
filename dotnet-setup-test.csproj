@@ -5,8 +5,8 @@
     <TargetFrameworks>netcoreapp3.1;netcoreapp5.0</TargetFrameworks>
     <RootNamespace>dotnet_setup_test</RootNamespace>
     <IsPackable>true</IsPackable>
-    <PackageId>GPRTestPackage</PackageId>
-    <Version>1.0.0</Version>
+    <PackageId>TestPackage</PackageId>
+    <Version>1.0.3</Version>
     <Authors>vsafonkin</Authors>
     <Company>akvelon</Company>
     <RepositoryUrl>https://github.com/vsafonkin/dotnet-setup-test</RepositoryUrl>
@@ -15,7 +15,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
     <PackageReference Include="MSTest.TestFramework" Version="2.1.0" />
-    <PackageReference Include="TestPackage" Version="1.0.1" />
+    <PackageReference Include="GPRTestPackage" Version="1.0.0" />
   </ItemGroup>
 
 </Project>

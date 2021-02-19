@@ -50,6 +50,9 @@ jobs:
       #   shell: pwsh
       #   run: Get-Content global.json
 
+      - name: Add Azure Nuget feed
+        run: dotnet nuget add source https://buildcanary.pkgs.visualstudio.com/CanaryBuilds/_packaging/testReadmeFeed/nuget/v3/index.json -n "AzureFeed"
+
       - name: Nuget.config
         shell: pwsh
         run: Get-Content '../nuget.config'
