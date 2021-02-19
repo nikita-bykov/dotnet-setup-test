@@ -54,9 +54,9 @@ jobs:
       #   shell: pwsh
       #   run: Get-Content '../nuget.config'
 
-      # - name: Create nuget package
-      #   run: dotnet pack --configuration Release dotnet-setup-test.csproj
+      - name: Create nuget package
+        run: dotnet pack --configuration Release dotnet-setup-test.csproj
 
       - name: Publish nuget package
         run: |
-          dotnet nuget push bin/Debug/*.nupkg -s https://nuget.pkg.github.com/vsafonkin/index.json -k ${{ secrets.GITHUB_TOKEN }}
+          dotnet nuget push bin/Release/*.nupkg -s https://nuget.pkg.github.com/vsafonkin/index.json -k ${{ secrets.GITHUB_TOKEN }}
