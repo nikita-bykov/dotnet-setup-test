@@ -53,6 +53,9 @@ jobs:
       - name: Nuget.config
         shell: pwsh
         run: Get-Content '../nuget.config'
+      
+      - name: Build project
+        run: dotnet build
 
       - name: Create nuget package
         run: dotnet pack --configuration Release dotnet-setup-test.csproj
