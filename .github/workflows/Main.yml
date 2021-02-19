@@ -59,4 +59,4 @@ jobs:
 
       - name: Publish nuget package
         run: |
-          dotnet nuget push bin/Release/*.nupkg --skip-duplicate
+          dotnet nuget push bin/Release/*.nupkg
