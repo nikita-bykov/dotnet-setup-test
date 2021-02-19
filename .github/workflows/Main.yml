@@ -50,13 +50,13 @@ jobs:
       #   shell: pwsh
       #   run: Get-Content global.json
 
-      # - name: Nuget.config
-      #   shell: pwsh
-      #   run: Get-Content '../nuget.config'
+      - name: Nuget.config
+        shell: pwsh
+        run: Get-Content '../nuget.config'
 
       - name: Create nuget package
         run: dotnet pack --configuration Release dotnet-setup-test.csproj
 
       - name: Publish nuget package
         run: |
-          dotnet nuget push bin/Release/*.nupkg
+          dotnet nuget push bin/Release/*.nupkg --skip-duplicate
