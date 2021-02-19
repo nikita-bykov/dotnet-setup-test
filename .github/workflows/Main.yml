@@ -57,12 +57,12 @@ jobs:
       - name: Build project
         run: dotnet build
 
-      # - name: Create nuget package
-      #   run: dotnet pack --configuration Release dotnet-setup-test.csproj
+      - name: Create nuget package
+        run: dotnet pack --configuration Release dotnet-setup-test.csproj
 
-      # - name: Publish nuget package
-      #   run: |
-      #     dotnet nuget push bin/Release/*.nupkg
+      - name: Publish nuget package
+        run: |
+          dotnet nuget push bin/Release/*.nupkg
 
       # - name: Setup dotnet
       #   uses: actions/setup-dotnet@v1
@@ -70,10 +70,6 @@ jobs:
       #     source-url: https://buildcanary.pkgs.visualstudio.com/CanaryBuilds/_packaging/testReadmeFeed/nuget/v3/index.json
       #   env:
       #     NUGET_AUTH_TOKEN: ${{ secrets.AZ_TOKEN }}
-      
-      # - name: Publish nuget package
-      #   run: |
-      #     dotnet nuget push bin/Release/*.nupkg
 
       # - name: Publish nuget package
       #   run: |
