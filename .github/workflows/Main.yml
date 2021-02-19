@@ -36,9 +36,9 @@ jobs:
         with:
           dotnet-version: 3.1.*
           # source-url: https://api.nuget.org/v3/index.json
-        #   source-url: https://nuget.pkg.github.com/vsafonkin/index.json
-        # env:
-        #   NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          source-url: https://nuget.pkg.github.com/vsafonkin/index.json
+        env:
+          NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - run: dotnet --info
 
@@ -59,4 +59,4 @@ jobs:
 
       - name: Publish nuget package
         run: |
-          dotnet nuget push bin/Release/*.nupkg -s https://nuget.pkg.github.com/vsafonkin/index.json -k ${{ secrets.GITHUB_TOKEN }}
+          dotnet nuget push bin/Release/*.nupkg
