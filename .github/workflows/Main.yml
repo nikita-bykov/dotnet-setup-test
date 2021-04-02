@@ -23,6 +23,8 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '5.0.x'
+        env:
+          DOTNET_INSTALL_DIR: 'C:\Program Files\dotnet'
 
       - run: dotnet --info
       - run: Write-Host $env:PATH
