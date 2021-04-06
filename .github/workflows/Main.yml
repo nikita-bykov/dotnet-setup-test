@@ -19,25 +19,21 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup dotnet
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: '5.0.x'
-        env:
-          DOTNET_INSTALL_DIR: 'C:\Program Files\dotnet'
-
-      - run: dotnet --info
-      - run: Write-Host $env:PATH
-
       # - name: Setup dotnet
       #   uses: actions/setup-dotnet@v1
       #   with:
-      #     source-url: https://pkgs.dev.azure.com/CanaryBuilds/_packaging/testReadmeFeed/nuget/v3/index.json
-      #     config-file: ../nuget.config
-      #     owner: v-vlsafo
+      #     dotnet-version: '5.0.x'
       #   env:
-      #     NUGET_AUTH_TOKEN: ${{ secrets.AZ_TOKEN }}
-      # - run: dotnet new globaljson --sdk-version "3.1.406"
+      #     DOTNET_INSTALL_DIR: 'C:\Program Files\dotnet'
+
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v1
+        with:
+          source-url: https://nuget.pkg.github.com/VSORG-1/index.json
+          # config-file: ../nuget.config
+          # owner: v-vlsafo
+        env:
+          NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # - run: dotnet --version
 
@@ -52,15 +48,15 @@ jobs:
       #   shell: pwsh
       #   run: Get-Content '../nuget.config'
         
-      # - name: Build project
-      #   run: dotnet build
+      - name: Build project
+        run: dotnet build
 
-      # - name: Create nuget package
-      #   run: dotnet pack --configuration Release dotnet-setup-test.csproj
+      - name: Create nuget package
+        run: dotnet pack --configuration Release dotnet-setup-test.csproj
 
-      # - name: Publish nuget package
-      #   run: |
-      #     dotnet nuget push bin/Release/*.nupkg
+      - name: Publish nuget package
+        run: |
+          dotnet nuget push bin/Release/*.nupkg
 
       # - name: Setup dotnet
       #   uses: actions/setup-dotnet@v1
