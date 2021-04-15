@@ -26,11 +26,14 @@ jobs:
       #   env:
       #     DOTNET_INSTALL_DIR: 'C:\Program Files\dotnet'
 
+      - name: New nuget.config
+        run: dotnet new nugetconfig
+
       - name: Setup dotnet
         uses: actions/setup-dotnet@v1
         with:
-          source-url: https://nuget.pkg.github.com/VSORG-1/index.json
-          # config-file: ../nuget.config
+          source-url: https://nuget.pkg.github.com/vsafonkin/index.json
+          config-file: ../nuget.config
           # owner: v-vlsafo
         env:
           NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -44,9 +47,9 @@ jobs:
       # - name: Add Azure Nuget feed
       #   run: dotnet nuget add source https://buildcanary.pkgs.visualstudio.com/CanaryBuilds/_packaging/testReadmeFeed/nuget/v3/index.json -n "AzureFeed" --configfile ../nuget.config --store-password-in-clear-text -p ${{ secrets.AZ_TOKEN }} -u v-vlsafo
 
-      # - name: Nuget.config
-      #   shell: pwsh
-      #   run: Get-Content '../nuget.config'
+      - name: Nuget.config
+        shell: pwsh
+        run: Get-Content '../nuget.config'
         
       - name: Build project
         run: dotnet build
