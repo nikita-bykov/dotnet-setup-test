@@ -29,7 +29,7 @@ jobs:
       - name: Setup dotnet
         uses: actions/setup-dotnet@v1
         with:
-          # source-url: https://nuget.pkg.github.com/vsafonkin/index.json
+          source-url: https://nuget.pkg.github.com/vsafonkin/index.json
           config-file: ../nuget.config
           # owner: v-vlsafo
         env:
