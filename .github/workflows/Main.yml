@@ -26,6 +26,8 @@ jobs:
       #   env:
       #     DOTNET_INSTALL_DIR: 'C:\Program Files\dotnet'
 
+      - run: dotnet new nugetconfig
+
       - name: Setup dotnet
         uses: actions/setup-dotnet@v1
         with:
