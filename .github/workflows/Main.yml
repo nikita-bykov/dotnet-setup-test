@@ -26,6 +26,8 @@ jobs:
       #   env:
       #     DOTNET_INSTALL_DIR: 'C:\Program Files\dotnet'
 
+      - run: ls /imagegeneration
+
       - run: dotnet new nugetconfig
 
       - name: Setup dotnet
