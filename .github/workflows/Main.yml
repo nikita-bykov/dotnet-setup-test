@@ -26,8 +26,6 @@ jobs:
       #   env:
       #     DOTNET_INSTALL_DIR: 'C:\Program Files\dotnet'
 
-      - run: cat /imagegeneration/imagedata.json
-
       - name: Setup dotnet
         uses: actions/setup-dotnet@v1
         with:
@@ -37,7 +35,7 @@ jobs:
         env:
           NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # - run: dotnet --version
+      - run: dotnet new nugetconfig
 
       # - name: global json
       #   shell: pwsh
