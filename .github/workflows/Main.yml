@@ -19,18 +19,11 @@ jobs:
         with:
           fetch-depth: 0
 
-      # - name: Setup dotnet
-      #   uses: actions/setup-dotnet@v1
-      #   with:
-      #     dotnet-version: '5.0.x'
-      #   env:
-      #     DOTNET_INSTALL_DIR: 'C:\Program Files\dotnet'
-
       - name: Setup dotnet
         uses: actions/setup-dotnet@23fa2c14732529624a3f661db4d32e80028da8f8
         with:
           source-url: https://nuget.pkg.github.com/vsafonkin/index.json
-          dotnet-version: '5.x'
+          dotnet-version: '6.x'
           # config-file: ./nuget.config
           # owner: v-vlsafo
         env:
