@@ -23,7 +23,7 @@ jobs:
         uses: actions/setup-dotnet@23fa2c14732529624a3f661db4d32e80028da8f8
         with:
           source-url: https://nuget.pkg.github.com/vsafonkin/index.json
-          dotnet-version: '6.0.0-preview.3'
+          dotnet-version: '6.0.100-preview.3.21202.5'
           # config-file: ./nuget.config
           # owner: v-vlsafo
         env:
