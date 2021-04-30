@@ -27,9 +27,10 @@ jobs:
       #     DOTNET_INSTALL_DIR: 'C:\Program Files\dotnet'
 
       - name: Setup dotnet
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@23fa2c14732529624a3f661db4d32e80028da8f8
         with:
           source-url: https://nuget.pkg.github.com/vsafonkin/index.json
+          dotnet-version: '5.x'
           # config-file: ./nuget.config
           # owner: v-vlsafo
         env:
