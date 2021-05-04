@@ -48,7 +48,7 @@ jobs:
 
       - name: Publish nuget package
         run: |
-          dotnet nuget push bin/Release/*.nupkg -k ${{ secrets.NUGET_ORG_PAT }}
+          dotnet nuget push bin/Release/*.nupkg
 
       # - name: Setup dotnet
       #   uses: actions/setup-dotnet@v1
