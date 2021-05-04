@@ -20,14 +20,14 @@ jobs:
           fetch-depth: 0
 
       - name: Setup dotnet
-        uses: actions/setup-dotnet@23fa2c14732529624a3f661db4d32e80028da8f8
+        uses: actions/setup-dotnet@v1
         with:
-          source-url: https://nuget.pkg.github.com/vsafonkin/index.json
-          dotnet-version: '6.0.100-preview.3.21202.5'
+          source-url: https://api.nuget.org/v3/index.json
+#           dotnet-version: '6.0.100-preview.3.21202.5'
           # config-file: ./nuget.config
           # owner: v-vlsafo
         env:
-          NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NUGET_AUTH_TOKEN: ${{ secrets.NUGET_ORG_TOKEN }}
 
       - run: dotnet new nugetconfig
 
