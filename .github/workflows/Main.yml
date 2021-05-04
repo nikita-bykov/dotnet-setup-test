@@ -29,8 +29,6 @@ jobs:
         env:
           NUGET_AUTH_TOKEN: ${{ secrets.NUGET_ORG_PAT }}
 
-      - run: dotnet new nugetconfig
-
       # - name: global json
       #   shell: pwsh
       #   run: Get-Content global.json
