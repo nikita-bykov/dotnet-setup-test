@@ -27,7 +27,7 @@ jobs:
           # config-file: ./nuget.config
           # owner: v-vlsafo
         env:
-          NUGET_AUTH_TOKEN: ${{ secrets.NUGET_ORG_TOKEN }}
+          NUGET_AUTH_TOKEN: ${{ secrets.NUGET_ORG_PAT }}
 
       - run: dotnet new nugetconfig
 
