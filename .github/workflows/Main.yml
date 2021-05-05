@@ -22,10 +22,11 @@ jobs:
       - run: dotnet new nugetconfig
 
       - name: Setup dotnet
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@291588df6a18de26865f534622042f657f0db06d
         with:
           source-url: https://api.nuget.org/v3/index.json
-#           dotnet-version: '3.1'
+          dotnet-version: '6.0.x'
+          include-prerelease: 'true'
           config-file: ./nuget.config
 #           owner: v-vlsafo
         env:
