@@ -19,7 +19,7 @@ jobs:
         with:
           fetch-depth: 0
           
-      - run: dotnet new nugetconfig
+#       - run: dotnet new nugetconfig
 
       - name: Setup dotnet
         uses: actions/setup-dotnet@291588df6a18de26865f534622042f657f0db06d
@@ -31,6 +31,8 @@ jobs:
 #           owner: v-vlsafo
         env:
           NUGET_AUTH_TOKEN: ${{ secrets.NUGET_ORG_PAT }}
+          
+      - run: dotnet --version
 
       # - name: global json
       #   shell: pwsh
