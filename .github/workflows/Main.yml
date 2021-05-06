@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ ubuntu-latest ]
+        os: [ ubuntu-latest, windows-latest, macos-latest ]
 
     steps:
       - uses: actions/checkout@v2
@@ -22,12 +22,12 @@ jobs:
 #       - run: dotnet new nugetconfig
 
       - name: Setup dotnet
-        uses: actions/setup-dotnet@291588df6a18de26865f534622042f657f0db06d
+        uses: actions/setup-dotnet@v1
         with:
-          source-url: https://api.nuget.org/v3/index.json
+#           source-url: https://api.nuget.org/v3/index.json
           dotnet-version: '6.0.x'
           include-prerelease: 'true'
-          config-file: ./nuget.config
+#           config-file: ./nuget.config
 #           owner: v-vlsafo
         env:
           NUGET_AUTH_TOKEN: ${{ secrets.NUGET_ORG_PAT }}
@@ -41,9 +41,9 @@ jobs:
       # - name: Add Azure Nuget feed
       #   run: dotnet nuget add source https://buildcanary.pkgs.visualstudio.com/CanaryBuilds/_packaging/testReadmeFeed/nuget/v3/index.json -n "AzureFeed" --configfile ../nuget.config --store-password-in-clear-text -p ${{ secrets.AZ_TOKEN }} -u v-vlsafo
 
-      - name: Nuget.config
-        shell: pwsh
-        run: Get-Content '../nuget.config'
+#       - name: Nuget.config
+#         shell: pwsh
+#         run: Get-Content '../nuget.config'
         
       - name: Build project
         run: dotnet build
@@ -51,9 +51,9 @@ jobs:
       - name: Create nuget package
         run: dotnet pack --configuration Release dotnet-setup-test.csproj
 
-      - name: Publish nuget package
-        run: |
-          dotnet nuget push bin/Release/*.nupkg
+#       - name: Publish nuget package
+#         run: |
+#           dotnet nuget push bin/Release/*.nupkg
 
       # - name: Setup dotnet
       #   uses: actions/setup-dotnet@v1
