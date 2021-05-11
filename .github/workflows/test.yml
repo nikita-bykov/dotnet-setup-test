@@ -1,0 +1,32 @@
+name: Test of dotnet
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  package:
+      runs-on: ubuntu-latest
+      name: Update NuGet package
+      needs: build
+      defaults:
+        run:
+          working-directory: ./
+
+      steps:
+        - name: Checkout repository
+          uses: actions/checkout@v1
+
+        - name: Setup .NET Core @ Latest
+          uses: actions/setup-dotnet@v1
+          with:
+            source-url: https://nuget.pkg.github.com/v-nibyko/index.json
+          env:
+            NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+        - name: Generate Package
+          run: dotnet pack --configuration Release dotnet-setup-test.csproj
+
+        - name: Push generated package to GitHub registry
+          run: dotnet nuget push ./bin/Release/*.nupkg --skip-duplicate --no-symbols true
