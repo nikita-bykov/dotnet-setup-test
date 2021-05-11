@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ ubuntu-latest, windows-latest, macos-latest ]
+        os: [ ubuntu-latest ]
 
     steps:
       - uses: actions/checkout@v2
@@ -24,15 +24,13 @@ jobs:
       - name: Setup dotnet
         uses: actions/setup-dotnet@v1
         with:
-#           source-url: https://api.nuget.org/v3/index.json
+          source-url: https://nuget.pkg.github.com/vsafonkin/index.json
           dotnet-version: '3.x'
 #           include-prerelease: 'true'
 #           config-file: ./nuget.config
 #           owner: v-vlsafo
         env:
-          NUGET_AUTH_TOKEN: ${{ secrets.NUGET_ORG_PAT }}
-          
-      - run: dotnet --version
+          NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # - name: global json
       #   shell: pwsh
@@ -62,6 +60,6 @@ jobs:
       #   env:
       #     NUGET_AUTH_TOKEN: ${{ secrets.AZ_TOKEN }}
 
-      # - name: Publish nuget package
-      #   run: |
-      #     dotnet nuget push ./bin/Release/*.nupkg -k ${{ secrets.AZ_TOKEN }}
+      - name: Publish nuget package
+        run: |
+          dotnet nuget push ./bin/Release/*.nupkg
