@@ -9,7 +9,6 @@ jobs:
   package:
       runs-on: ubuntu-latest
       name: Update NuGet package
-      needs: build
       defaults:
         run:
           working-directory: ./
@@ -24,6 +23,9 @@ jobs:
             source-url: https://nuget.pkg.github.com/v-nibyko/index.json
           env:
             NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+        - name: Build project
+          run: dotnet build
 
         - name: Generate Package
           run: dotnet pack --configuration Release dotnet-setup-test.csproj
