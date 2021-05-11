@@ -24,7 +24,7 @@ jobs:
       - name: Setup dotnet
         uses: actions/setup-dotnet@v1
         with:
-          source-url: https://nuget.pkg.github.com/vsafonkin/index.json
+          source-url: https://nuget.pkg.github.com/nikita-bykov/index.json
           dotnet-version: '3.x'
 #           include-prerelease: 'true'
 #           config-file: ./nuget.config
@@ -32,7 +32,7 @@ jobs:
         env:
           NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # - name: global json
+      # - name: global json\
       #   shell: pwsh
       #   run: Get-Content global.json
 
