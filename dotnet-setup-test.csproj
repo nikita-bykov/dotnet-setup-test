@@ -6,10 +6,10 @@
     <RootNamespace>dotnet_setup_test</RootNamespace>
     <IsPackable>true</IsPackable>
     <PackageId>GPRTestPackage</PackageId>
-    <Version>1.2.5</Version>
-<!--     <Authors>vsafonkin</Authors> -->
-<!--     <Company>akvelon</Company> -->
-<!--     <RepositoryUrl>https://github.com/vsafonkin/dotnet-setup-test</RepositoryUrl> -->
+    <Version>1.2.6</Version>
+    <Authors>vsafonkin</Authors>
+    <Company>akvelon</Company>
+    <RepositoryUrl>https://github.com/vsafonkin/dotnet-setup-test</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
