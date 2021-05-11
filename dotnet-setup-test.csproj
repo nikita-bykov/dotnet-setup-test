@@ -6,7 +6,7 @@
     <RootNamespace>dotnet_setup_test</RootNamespace>
     <IsPackable>true</IsPackable>
     <PackageId>GPRTestPackage</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Authors>nikita-bykov</Authors>
     <Company>akvelon</Company>
     <RepositoryUrl>https://github.com/nikita-bykov/dotnet-setup-test</RepositoryUrl>
