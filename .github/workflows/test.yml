@@ -11,7 +11,7 @@ jobs:
       name: Update NuGet package
       defaults:
         run:
-          working-directory: ./
+          working-directory: ./src
 
       steps:
         - name: Checkout repository
@@ -28,7 +28,7 @@ jobs:
           run: dotnet build
 
         - name: Generate Package
-          run: dotnet pack --configuration Release dotnet-setup-test.csproj
+          run: dotnet pack -c Release -o out
 
         - name: Push generated package to GitHub registry
           run: dotnet nuget push ./bin/Release/*.nupkg --skip-duplicate --no-symbols true
