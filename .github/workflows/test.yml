@@ -9,9 +9,9 @@ jobs:
   package:
       runs-on: ubuntu-latest
       name: Update NuGet package
-      # defaults:
-      #   run:
-      #     working-directory: ./src
+      defaults:
+        run:
+          working-directory: ./src
 
       steps:
         - name: Checkout repository
@@ -25,7 +25,7 @@ jobs:
             NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
         - name: Build project
-          run: dotnet build ./src/dotnet-setup-test.csproj
+          run: dotnet build
 
         - name: Generate Package
           run: dotnet pack ./src -c Release -o out 
